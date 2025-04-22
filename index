@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meghana | Data Analyst</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+    }
+    nav {
+      width: 200px;
+      height: 100vh;
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem;
+      position: fixed;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 1rem 0;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background-color: #34495e;
+    }
+    main {
+      margin-left: 200px;
+      padding: 2rem;
+      width: 100%;
+      background-color: #f9f9f9;
+    }
+    section {
+      padding: 4rem 2rem;
+      margin-bottom: 3rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    h2 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#resume">Resume</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact Me</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi, I’m Meghana – a data analyst with experience in ETL workflows, AI research, and business analytics. I'm currently at ITU contributing to data strategy and AI for Good.</p>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>Here’s a quick summary of my qualifications, certifications, and experiences. You can also download my <a href="Meghana_Resume.pdf" target="_blank">resume here</a>.</p>
+      <ul>
+        <li>Data Analyst at Infosys – ETL, Informatica PowerCenter</li>
+        <li>Consultant at ITU – AI for Good, Membership data analysis</li>
+        <li>Certified in Power BI, SQL, Data Strategy, and more</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>AI for Good Global Summit website enhancements</li>
+        <li>ITU Membership Data Dashboard</li>
+        <li>Informatica data archival and legal hold project</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>📧 Email: meghana@example.com</p>
+      <p>🔗 <a href="https://www.linkedin.com/in/yourprofile/" target="_blank">LinkedIn</a></p>
+    </section>
+  </main>
+
+</body>
+</html>
