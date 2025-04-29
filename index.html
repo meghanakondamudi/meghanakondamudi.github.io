@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Portfolio</title>
+    <title>Meghana Kondamudi | Data Analyst</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -95,6 +95,31 @@
             align-items: flex-start;
         }
         
+        .intro-container {
+            max-width: 700px;
+        }
+        
+        .typewriter-container {
+            min-height: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: #666;
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            padding: 6px 12px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
         /* Resume Section */
         .resume-item {
             margin-bottom: 30px;
@@ -109,6 +134,23 @@
             color: #666;
             font-size: 0.9rem;
             margin-bottom: 10px;
+        }
+        
+        .resume-company {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .resume-description {
+            margin-bottom: 15px;
+        }
+        
+        .resume-highlights {
+            margin-left: 20px;
+        }
+        
+        .resume-highlights li {
+            margin-bottom: 8px;
         }
         
         /* Projects Section */
@@ -175,72 +217,111 @@
             <button class="nav-button" onclick="scrollToSection('home')">Home</button>
             <button class="nav-button" onclick="scrollToSection('resume')">Resume</button>
             <button class="nav-button" onclick="scrollToSection('projects')">Projects</button>
-            <button class="nav-button" onclick="scrollToSection('contact')">Contact Me</button>
+            <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
         </nav>
     </header>
     
     <section id="home">
-        <h1>Hello, I'm [Your Name]</h1>
-        <h2>Web Developer & Designer</h2>
-        <p>I create clean, functional, and user-focused digital experiences with a minimalist approach.</p>
+        <div class="intro-container">
+            <h1>Hello, I'm <span style="font-weight: 700;">Meghana Kondamudi</span></h1>
+            <div class="typewriter-container" id="typewriter"></div>
+            <p>
+                A data-driven problem solver with a background in Computer Science and experience across both public and private sectors. 
+                Currently serving as a Data Support Consultant at the International Telecommunication Union (ITU), working at the 
+                intersection of AI, ICT, data analysis, and web development.
+            </p>
+            
+            <div class="skills-tags">
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">Analytical Skills</div>
+                <div class="skill-tag">Microsoft Power BI</div>
+                <div class="skill-tag">Informatica PowerCenter</div>
+                <div class="skill-tag">Data Visualization</div>
+                <div class="skill-tag">AI & ICT</div>
+                <div class="skill-tag">Web Development</div>
+            </div>
+        </div>
     </section>
     
     <section id="resume">
-        <h1>Resume</h1>
+        <h1>Professional Experience</h1>
         
         <div class="resume-item">
-            <h2>Experience</h2>
-            
-            <div class="resume-item">
-                <h3>Frontend Developer at XYZ Corp</h3>
-                <div class="resume-date">2020 - Present</div>
-                <p>Developed responsive web applications using React and Vue.js. Collaborated with design team to implement UI components.</p>
+            <div class="resume-company">International Telecommunication Union (ITU)</div>
+            <div class="resume-date">Jun 2024 - Present | Geneva, Switzerland</div>
+            <div class="resume-description">
+                Specialized agency of the United Nations responsible for information and communication technologies (ICTs).
             </div>
-            
-            <div class="resume-item">
-                <h3>Web Designer at ABC Agency</h3>
-                <div class="resume-date">2018 - 2020</div>
-                <p>Designed and prototyped websites for clients across various industries. Created design systems and style guides.</p>
-            </div>
+            <h3>Consultant, Telecommunication Standardization Bureau</h3>
+            <ul class="resume-highlights">
+                <li>Designed and maintained web pages for the AI for Good website, ensuring high-quality content delivery</li>
+                <li>Managed speaker/exhibitor content and curated global tech events for the website</li>
+                <li>Optimized website SEO and accessibility to enhance visibility and engagement</li>
+                <li>Conducted research on AI startups, industries, and countries to support strategic partner engagement</li>
+                <li>Created weekly traffic reports for key webpages to monitor and analyze performance</li>
+                <li>Extracted and analyzed membership data from CRM to generate sector-specific reports</li>
+                <li>Co-organized the 9-day Digital Wave Stage at WTSA-24 Expo in India</li>
+            </ul>
         </div>
         
         <div class="resume-item">
-            <h2>Education</h2>
-            <h3>B.S. in Computer Science</h3>
-            <div class="resume-date">University of Technology, 2014 - 2018</div>
+            <div class="resume-company">Infosys</div>
+            <div class="resume-date">Aug 2018 - Nov 2020 | India</div>
+            <h3>Systems Engineer</h3>
+            <ul class="resume-highlights">
+                <li>Developed and optimized 50+ data mappings and workflows using Informatica PowerCenter</li>
+                <li>Engineered data management capabilities for archival, purging, and legal holds</li>
+                <li>Collaborated with business analysts to translate 100+ business requirements into solutions</li>
+                <li>Implemented technical support frameworks for 5+ major client projects</li>
+            </ul>
         </div>
         
+        <h2 style="margin-top: 50px;">Education</h2>
         <div class="resume-item">
-            <h2>Skills</h2>
-            <p>HTML, CSS, JavaScript, React, Vue.js, Node.js, Figma, UX Design</p>
+            <h3>Bachelor of Technology in Computer Science</h3>
+            <div class="resume-date">Sreenidhi Institute of Science and Technology | Grade: A</div>
         </div>
     </section>
     
     <section id="projects">
-        <h1>Projects</h1>
-        <p>Here are some of my recent works:</p>
+        <h1>Key Projects</h1>
         
         <div class="project-grid">
             <div class="project-card">
-                <h3>Notion Clone</h3>
-                <p>A minimalist note-taking app inspired by Notion, built with React and Firebase.</p>
+                <h3>Digital Wave Stage (ITU WTSA-24 Expo)</h3>
+                <p>Co-organized and analyzed this 9-day event on digital connectivity and AI standards:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Coordinated 24 sessions with 51 speakers</li>
+                    <li>43% female speaker representation</li>
+                    <li>Global participation from Asia, Europe, and North America</li>
+                </ul>
             </div>
             
             <div class="project-card">
-                <h3>E-commerce Dashboard</h3>
-                <p>Analytics dashboard for online stores with data visualization using D3.js.</p>
+                <h3>Health Insurance System</h3>
+                <p>Java/Spring website for insurance plan selection and management:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Plan customization features</li>
+                    <li>Purchase record maintenance</li>
+                    <li>Maturity amount forecasting</li>
+                </ul>
             </div>
             
             <div class="project-card">
-                <h3>Portfolio Template</h3>
-                <p>Open-source portfolio template for designers and developers.</p>
+                <h3>Secure Email Transmission System</h3>
+                <p>Enhanced security solution for email communication:</p>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Two-layer authentication</li>
+                    <li>Content encryption</li>
+                    <li>Confidentiality protection</li>
+                </ul>
             </div>
         </div>
     </section>
     
     <section id="contact">
-        <h1>Contact Me</h1>
-        <p>Feel free to reach out for collaborations or just to say hello!</p>
+        <h1>Get In Touch</h1>
+        <p>I'm always interested in discussing data projects, collaborations, or opportunities.</p>
         
         <form>
             <input type="text" placeholder="Your Name" required>
@@ -251,10 +332,37 @@
     </section>
     
     <footer>
-        <p>© 2023 [Your Name]. All rights reserved.</p>
+        <p>© 2024 Meghana Kondamudi. All rights reserved.</p>
     </footer>
     
     <script>
+        // Typewriter effect
+        const typewriterText = ["Data Analyst", "AI & ICT Specialist", "Problem Solver", "Web Developer", "Data Storyteller"];
+        let count = 0;
+        let index = 0;
+        let currentText = "";
+        let letter = "";
+        
+        (function type() {
+            if (count === typewriterText.length) {
+                count = 0;
+            }
+            currentText = typewriterText[count];
+            letter = currentText.slice(0, ++index);
+            
+            document.getElementById("typewriter").textContent = letter;
+            if (letter.length === currentText.length) {
+                setTimeout(() => {
+                    count++;
+                    index = 0;
+                    setTimeout(type, 500);
+                }, 2000);
+            } else {
+                setTimeout(type, 100);
+            }
+        })();
+        
+        // Smooth scrolling
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth' });
