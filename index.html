@@ -22,16 +22,25 @@
             padding: 20px;
         }
         
-        /* Header with Navigation */
+        /* Header with Avatar and Navigation */
         .header {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px 0;
             position: sticky;
             top: 0;
             background-color: white;
             z-index: 100;
             border-bottom: 1px solid #eee;
+        }
+        
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #ddd;
         }
         
         /* Navigation */
@@ -41,51 +50,17 @@
         
         .nav-button {
             margin-left: 15px;
-            padding: 10px 20px;
+            padding: 8px 16px;
             background: none;
             border: 1px solid #333;
-            border-radius: 25px;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.2s;
         }
         
         .nav-button:hover {
-            background-color: #333;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .nav-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255,255,255,0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%, -50%);
-            transform-origin: 50% 50%;
-        }
-        
-        .nav-button:focus:not(:active)::after {
-            animation: ripple 0.6s ease-out;
-        }
-        
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(20, 20);
-                opacity: 0;
-            }
+            background-color: #f0f0f0;
         }
         
         /* Sections */
@@ -117,61 +92,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .profile-image-container {
-            margin: 40px 0;
-            position: relative;
-        }
-        
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #333;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .profile-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        }
-        
-        .intro-container {
-            max-width: 700px;
-        }
-        
-        .typewriter-container {
-            min-height: 2.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            color: #666;
-        }
-        
-        .skills-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .skill-tag {
-            padding: 8px 16px;
-            background: #f0f0f0;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-        
-        .skill-tag:hover {
-            background: #333;
-            color: white;
-            transform: translateY(-2px);
+            align-items: flex-start;
         }
         
         /* Resume Section */
@@ -190,23 +111,6 @@
             margin-bottom: 10px;
         }
         
-        .resume-company {
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-        
-        .resume-description {
-            margin-bottom: 15px;
-        }
-        
-        .resume-highlights {
-            margin-left: 20px;
-        }
-        
-        .resume-highlights li {
-            margin-bottom: 8px;
-        }
-        
         /* Projects Section */
         .project-grid {
             display: grid;
@@ -217,107 +121,52 @@
         
         .project-card {
             border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: #333;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
+            border-radius: 4px;
+            padding: 20px;
+            transition: all 0.2s;
         }
         
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: #333;
-        }
-        
-        .project-card:hover::before {
-            transform: scaleX(1);
+            background-color: #f9f9f9;
         }
         
         .project-card h3 {
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .project-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #333;
-            transition: width 0.3s ease;
-        }
-        
-        .project-card:hover h3::after {
-            width: 100%;
+            margin-bottom: 10px;
         }
         
         /* Contact Section */
-        #contact form {
-            max-width: 500px;
-            margin: 0 auto;
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
-        #contact input,
-        #contact textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            transition: all 0.3s;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
         
-        #contact input:focus,
-        #contact textarea:focus {
-            outline: none;
-            border-color: #333;
-            box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+        .contact-icon {
+            width: 24px;
+            height: 24px;
         }
         
-        #contact button {
-            padding: 12px 30px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .contact-link {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
         }
         
-        #contact button:hover {
-            background-color: #222;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        #contact button:active {
-            transform: translateY(0);
+        .contact-link:hover {
+            border-bottom: 1px solid #333;
         }
         
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             color: #666;
             font-size: 0.9rem;
         }
@@ -325,6 +174,7 @@
 </head>
 <body>
     <header class="header">
+        <img src="images/profile.jpg" alt="Meghana Kondamudi" class="avatar">
         <nav class="nav">
             <button class="nav-button" onclick="scrollToSection('home')">Home</button>
             <button class="nav-button" onclick="scrollToSection('resume')">Resume</button>
@@ -334,151 +184,98 @@
     </header>
     
     <section id="home">
-        <div class="intro-container">
-            <h1>Hello, I'm <span style="font-weight: 700;">Meghana Kondamudi</span></h1>
-            <div class="typewriter-container" id="typewriter"></div>
-            <p>
-                A data-driven problem solver with a background in Computer Science and experience across both public and private sectors. 
-                Currently serving as a Data Support Consultant at the International Telecommunication Union (ITU), working at the 
-                intersection of AI, ICT, data analysis, and web development.
-            </p>
-            
-            <div class="skills-tags">
-                <div class="skill-tag">SQL</div>
-                <div class="skill-tag">Analytical Skills</div>
-                <div class="skill-tag">Microsoft Power BI</div>
-                <div class="skill-tag">Informatica PowerCenter</div>
-                <div class="skill-tag">Data Visualization</div>
-                <div class="skill-tag">AI & ICT</div>
-                <div class="skill-tag">Web Development</div>
-            </div>
-        </div>
-        
-        <div class="profile-image-container">
-            <img src="https://github.com/meghanakondamudi/meghanakondamudi.github.io/blob/main/notion-avatar-1745921708060.png?raw=true" alt="Meghana Kondamudi" class="profile-image">
-        </div>
+        <h1>Hello, I'm Meghana Kondamudi</h1>
+        <h2>Data Analyst at International Telecommunication Union</h2>
+        <p>A data-driven problem solver with a background in Computer Science and experience across both public and private sectors. I specialize in AI, ICT, data analysis, and web development.</p>
     </section>
     
     <section id="resume">
-        <h1>Professional Experience</h1>
+        <h1>Resume</h1>
         
         <div class="resume-item">
-            <div class="resume-company">International Telecommunication Union (ITU)</div>
-            <div class="resume-date">Jun 2024 - Present | Geneva, Switzerland</div>
-            <div class="resume-description">
-                Specialized agency of the United Nations responsible for information and communication technologies (ICTs).
+            <h2>Experience</h2>
+            
+            <div class="resume-item">
+                <h3>Consultant, Telecommunication Standardization Bureau</h3>
+                <div class="resume-date">International Telecommunication Union | Jun 2024 - Present</div>
+                <p>Specialized agency of the United Nations responsible for information and communication technologies (ICTs).</p>
+                <ul>
+                    <li>Designed and maintained web pages for the AI for Good website</li>
+                    <li>Optimized website SEO and accessibility</li>
+                    <li>Co-organized the 9-day Digital Wave Stage at WTSA-24 Expo</li>
+                </ul>
             </div>
-            <h3>Consultant, Telecommunication Standardization Bureau</h3>
-            <ul class="resume-highlights">
-                <li>Designed and maintained web pages for the AI for Good website, ensuring high-quality content delivery</li>
-                <li>Managed speaker/exhibitor content and curated global tech events for the website</li>
-                <li>Optimized website SEO and accessibility to enhance visibility and engagement</li>
-                <li>Conducted research on AI startups, industries, and countries to support strategic partner engagement</li>
-                <li>Created weekly traffic reports for key webpages to monitor and analyze performance</li>
-                <li>Extracted and analyzed membership data from CRM to generate sector-specific reports</li>
-                <li>Co-organized the 9-day Digital Wave Stage at WTSA-24 Expo in India</li>
-            </ul>
+            
+            <div class="resume-item">
+                <h3>Systems Engineer</h3>
+                <div class="resume-date">Infosys | Aug 2018 - Nov 2020</div>
+                <p>Developed and optimized data mappings and workflows using Informatica PowerCenter.</p>
+            </div>
         </div>
         
         <div class="resume-item">
-            <div class="resume-company">Infosys</div>
-            <div class="resume-date">Aug 2018 - Nov 2020 | India</div>
-            <h3>Systems Engineer</h3>
-            <ul class="resume-highlights">
-                <li>Developed and optimized 50+ data mappings and workflows using Informatica PowerCenter</li>
-                <li>Engineered data management capabilities for archival, purging, and legal holds</li>
-                <li>Collaborated with business analysts to translate 100+ business requirements into solutions</li>
-                <li>Implemented technical support frameworks for 5+ major client projects</li>
-            </ul>
-        </div>
-        
-        <h2 style="margin-top: 50px;">Education</h2>
-        <div class="resume-item">
-            <h3>Bachelor of Technology in Computer Science</h3>
+            <h2>Education</h2>
+            <h3>B.Tech in Computer Science</h3>
             <div class="resume-date">Sreenidhi Institute of Science and Technology | Grade: A</div>
+        </div>
+        
+        <div class="resume-item">
+            <h2>Skills</h2>
+            <p>SQL, Analytical Skills, Microsoft Power BI, Informatica PowerCenter, Data Visualization, AI & ICT, Web Development</p>
         </div>
     </section>
     
     <section id="projects">
-        <h1>Key Projects</h1>
+        <h1>Projects</h1>
+        <p>Here are some of my key projects:</p>
         
         <div class="project-grid">
             <div class="project-card">
                 <h3>Digital Wave Stage (ITU WTSA-24 Expo)</h3>
-                <p>Co-organized and analyzed this 9-day event on digital connectivity and AI standards:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Coordinated 24 sessions with 51 speakers</li>
-                    <li>43% female speaker representation</li>
-                    <li>Global participation from Asia, Europe, and North America</li>
-                </ul>
+                <p>Co-organized and analyzed this 9-day event on digital connectivity and AI standards with 51 speakers.</p>
             </div>
             
             <div class="project-card">
                 <h3>Health Insurance System</h3>
-                <p>Java/Spring website for insurance plan selection and management:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Plan customization features</li>
-                    <li>Purchase record maintenance</li>
-                    <li>Maturity amount forecasting</li>
-                </ul>
+                <p>Java/Spring website for insurance plan selection and management.</p>
             </div>
             
             <div class="project-card">
                 <h3>Secure Email Transmission System</h3>
-                <p>Enhanced security solution for email communication:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Two-layer authentication</li>
-                    <li>Content encryption</li>
-                    <li>Confidentiality protection</li>
-                </ul>
+                <p>Enhanced security solution for email communication with two-layer authentication.</p>
             </div>
         </div>
     </section>
     
     <section id="contact">
         <h1>Get In Touch</h1>
-        <p style="text-align: left;">I'm always interested in discussing data projects, collaborations, or opportunities.</p>
+        <p>Feel free to reach out for collaborations or opportunities:</p>
         
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+        <div class="contact-info">
+            <div class="contact-item">
+                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <a href="mailto:your.email@example.com" class="contact-link">your.email@example.com</a>
+            </div>
+            
+            <div class="contact-item">
+                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">linkedin.com/in/yourprofile</a>
+            </div>
+        </div>
     </section>
     
     <footer>
-        <p> <center>© 2025 Meghana Kondamudi. All rights reserved.</center></p>
+        <p><center>© 2025 Meghana Kondamudi. All rights reserved.</center></p>
     </footer>
     
     <script>
-        // Typewriter effect
-        const typewriterText = ["Data Analyst", "AI & ICT Specialist", "Problem Solver", "Web Developer", "Data Storyteller"];
-        let count = 0;
-        let index = 0;
-        let currentText = "";
-        let letter = "";
-        
-        (function type() {
-            if (count === typewriterText.length) {
-                count = 0;
-            }
-            currentText = typewriterText[count];
-            letter = currentText.slice(0, ++index);
-            
-            document.getElementById("typewriter").textContent = letter;
-            if (letter.length === currentText.length) {
-                setTimeout(() => {
-                    count++;
-                    index = 0;
-                    setTimeout(type, 500);
-                }, 2000);
-            } else {
-                setTimeout(type, 100);
-            }
-        })();
-        
-        // Smooth scrolling
         function scrollToSection(sectionId) {
             const section = document.getElementById(sectionId);
             section.scrollIntoView({ behavior: 'smooth' });
