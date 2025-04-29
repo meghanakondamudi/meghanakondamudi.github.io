@@ -267,51 +267,36 @@
         .project-card:hover h3::after {
             width: 100%;
         }
-        
-        /* Contact Section */
-        #contact form {
-            max-width: 500px;
-            margin: 0 auto;
+                /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
         }
         
-        #contact input,
-        #contact textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            transition: all 0.3s;
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         
-        #contact input:focus,
-        #contact textarea:focus {
-            outline: none;
-            border-color: #333;
-            box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+        .contact-icon {
+            width: 20px;  /* Reduced from 24px */
+            height: 20px; /* Reduced from 24px */
+            flex-shrink: 0;
         }
         
-        #contact button {
-            padding: 12px 30px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .contact-link {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+            font-size: 0.95rem;
         }
         
-        #contact button:hover {
-            background-color: #222;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        #contact button:active {
-            transform: translateY(0);
+        .contact-link:hover {
+            border-bottom: 1px solid #333;
         }
         
         /* Footer */
@@ -435,7 +420,7 @@
         </div>
     </section>
 
-    <section id="contact">
+     <section id="contact">
         <h1>Get In Touch</h1>
         <p>Feel free to reach out for collaborations or opportunities:</p>
         
@@ -454,11 +439,10 @@
                     <rect x="2" y="9" width="4" height="12"></rect>
                     <circle cx="4" cy="4" r="2"></circle>
                 </svg>
-                <a href="https://www.linkedin.com/in/meghana-kondamudi/" target="_blank" class="contact-link">linkedin.com/in/Meghana-Kondamudi</a>
+                <a href="https://linkedin.com/in/meghana-kondamudi" target="_blank" class="contact-link">linkedin.com/in/meghana-kondamudi</a>
             </div>
         </div>
     </section>
-
     <footer>
         <p> <center>© 2025 Meghana Kondamudi. All rights reserved.</center></p>
     </footer>
