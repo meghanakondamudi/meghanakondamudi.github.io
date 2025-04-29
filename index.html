@@ -22,25 +22,16 @@
             padding: 20px;
         }
         
-        /* Header with Avatar and Navigation */
+        /* Header with Navigation */
         .header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: flex-end;
             padding: 20px 0;
             position: sticky;
             top: 0;
             background-color: white;
             z-index: 100;
             border-bottom: 1px solid #eee;
-        }
-        
-        .avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #ddd;
         }
         
         /* Navigation */
@@ -50,17 +41,51 @@
         
         .nav-button {
             margin-left: 15px;
-            padding: 8px 16px;
+            padding: 10px 20px;
             background: none;
             border: 1px solid #333;
-            border-radius: 4px;
+            border-radius: 25px;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .nav-button:hover {
-            background-color: #f0f0f0;
+            background-color: #333;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .nav-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255,255,255,0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%, -50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .nav-button:focus:not(:active)::after {
+            animation: ripple 0.6s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
         }
         
         /* Sections */
@@ -92,7 +117,28 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-image-container {
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
         
         .intro-container {
@@ -109,15 +155,23 @@
         .skills-tags {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 10px;
             margin-top: 20px;
         }
         
         .skill-tag {
-            padding: 6px 12px;
+            padding: 8px 16px;
             background: #f0f0f0;
             border-radius: 20px;
             font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .skill-tag:hover {
+            background: #333;
+            color: white;
+            transform: translateY(-2px);
         }
         
         /* Resume Section */
@@ -163,46 +217,107 @@
         
         .project-card {
             border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            transition: all 0.2s;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #333;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
         
         .project-card:hover {
-            background-color: #f9f9f9;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #333;
+        }
+        
+        .project-card:hover::before {
+            transform: scaleX(1);
         }
         
         .project-card h3 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .project-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #333;
+            transition: width 0.3s ease;
+        }
+        
+        .project-card:hover h3::after {
+            width: 100%;
         }
         
         /* Contact Section */
         #contact form {
             max-width: 500px;
+            margin: 0 auto;
         }
         
         #contact input,
         #contact textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin-bottom: 20px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: none;
+            border-color: #333;
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
         }
         
         #contact button {
-            padding: 10px 20px;
+            padding: 12px 30px;
             background-color: #333;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
             cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #contact button:hover {
+            background-color: #222;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        #contact button:active {
+            transform: translateY(0);
         }
         
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: #666;
             font-size: 0.9rem;
         }
@@ -210,9 +325,6 @@
 </head>
 <body>
     <header class="header">
-        <img src="C:\Users\megha\Downloads\notion-avatar-1745921708060 (1).png" 
-             alt="Profile Avatar" 
-             class="avatar">
         <nav class="nav">
             <button class="nav-button" onclick="scrollToSection('home')">Home</button>
             <button class="nav-button" onclick="scrollToSection('resume')">Resume</button>
@@ -240,6 +352,10 @@
                 <div class="skill-tag">AI & ICT</div>
                 <div class="skill-tag">Web Development</div>
             </div>
+        </div>
+        
+        <div class="profile-image-container">
+            <img src="your-avatar.jpg" alt="Meghana Kondamudi" class="profile-image">
         </div>
     </section>
     
@@ -321,7 +437,7 @@
     
     <section id="contact">
         <h1>Get In Touch</h1>
-        <p>I'm always interested in discussing data projects, collaborations, or opportunities.</p>
+        <p style="text-align: center;">I'm always interested in discussing data projects, collaborations, or opportunities.</p>
         
         <form>
             <input type="text" placeholder="Your Name" required>
