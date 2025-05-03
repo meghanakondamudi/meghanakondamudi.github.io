@@ -10,6 +10,7 @@
       --text-light: #000000;
       --bg-dark: #121212;
       --text-dark: #f0f0f0;
+      --section-margin: 2rem;
     }
 
     /* Reset and Base Styles */
@@ -41,20 +42,14 @@
       padding: 1rem;
       position: sticky;
       top: 0;
-      background-color: white;
+      background-color: var(--bg-light);
       z-index: 1000;
       border-bottom: 1px solid #eee;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      margin-left: auto;
+    body.dark-mode .header {
+      background-color: var(--bg-dark);
+      border-bottom: 1px solid #333;
     }
 
     .nav {
@@ -74,11 +69,21 @@
       overflow: hidden;
     }
 
+    body.dark-mode .nav-button {
+      border-color: #f0f0f0;
+      color: #f0f0f0;
+    }
+
     .nav-button:hover {
       background-color: #333;
       color: white;
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .nav-button:hover {
+      background-color: #f0f0f0;
+      color: #333;
     }
 
     .nav-button::after {
@@ -115,12 +120,22 @@
       background: none;
       border: none;
       cursor: pointer;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
       color: #333;
+      padding: 8px;
+      border-radius: 50%;
     }
 
     body.dark-mode .dark-mode-toggle {
       color: #f0f0f0;
+    }
+
+    .dark-mode-toggle:hover {
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .dark-mode-toggle:hover {
+      background-color: rgba(255,255,255,0.1);
     }
 
     main {
@@ -131,10 +146,22 @@
       margin-bottom: 1rem;
     }
 
+    /* Sections with left margin (starting from resume) */
+    #resume,
+    #projects,
+    #contact {
+      margin-left: var(--section-margin);
+      max-width: calc(100% - var(--section-margin));
+    }
+
     section {
       min-height: auto;
       padding: 40px 20px;
       border-bottom: 1px solid #eee;
+    }
+
+    body.dark-mode section {
+      border-bottom: 1px solid #333;
     }
 
     h1 {
@@ -163,6 +190,10 @@
       color: #666;
       font-size: 0.9rem;
       margin-bottom: 10px;
+    }
+
+    body.dark-mode .resume-date {
+      color: #aaa;
     }
 
     .resume-company {
@@ -205,6 +236,10 @@
       transition: all 0.3s ease;
     }
 
+    body.dark-mode .profile-image {
+      border-color: #f0f0f0;
+    }
+
     .profile-image:hover {
       transform: scale(1.05);
       box-shadow: 0 12px 25px rgba(0,0,0,0.15);
@@ -219,6 +254,10 @@
       margin-bottom: 1rem;
       font-size: 1.4rem;
       color: #666;
+    }
+
+    body.dark-mode .typewriter-container {
+      color: #aaa;
     }
 
     .skills-tags {
@@ -237,10 +276,20 @@
       transition: all 0.2s;
     }
 
+    body.dark-mode .skill-tag {
+      background: #333;
+      color: #f0f0f0;
+    }
+
     .skill-tag:hover {
       background: #333;
       color: white;
       transform: translateY(-2px);
+    }
+
+    body.dark-mode .skill-tag:hover {
+      background: #f0f0f0;
+      color: #333;
     }
 
     .project-grid {
@@ -257,6 +306,12 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      background-color: var(--bg-light);
+    }
+
+    body.dark-mode .project-card {
+      border-color: #333;
+      background-color: #1e1e1e;
     }
 
     .project-card::before {
@@ -272,10 +327,18 @@
       transition: transform 0.3s ease;
     }
 
+    body.dark-mode .project-card::before {
+      background: #f0f0f0;
+    }
+
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       border-color: #333;
+    }
+
+    body.dark-mode .project-card:hover {
+      border-color: #f0f0f0;
     }
 
     .project-card:hover::before {
@@ -297,6 +360,10 @@
       height: 2px;
       background: #333;
       transition: width 0.3s ease;
+    }
+
+    body.dark-mode .project-card h3::after {
+      background: #f0f0f0;
     }
 
     .project-card:hover h3::after {
@@ -330,8 +397,16 @@
       font-size: 0.95rem;
     }
 
+    body.dark-mode .contact-link {
+      color: #f0f0f0;
+    }
+
     .contact-link:hover {
       border-bottom: 1px solid #333;
+    }
+
+    body.dark-mode .contact-link:hover {
+      border-bottom: 1px solid #f0f0f0;
     }
 
     #contact {
@@ -345,27 +420,23 @@
       color: #666;
       font-size: 0.9rem;
     }
-/* Add dark mode for header */
-body.dark-mode .header {
-  background-color: var(--bg-dark);
-  border-bottom: 1px solid #333;
-}
 
-/* Dark mode for borders */
-body.dark-mode section {
-  border-bottom: 1px solid #333;
-}
+    body.dark-mode footer {
+      color: #aaa;
+    }
 
-/* Remove unused classes */
-.header-left, .header-right {
-  display: none;
-}
     @media (max-width: 768px) {
       h1 {
         font-size: 1.8rem;
       }
       .skills-tags {
         flex-direction: column;
+      }
+      #resume,
+      #projects,
+      #contact {
+        margin-left: 1rem;
+        max-width: calc(100% - 1rem);
       }
     }
   </style>
@@ -378,9 +449,7 @@ body.dark-mode section {
             <button class="nav-button" onclick="scrollToSection('projects')">Projects</button>
             <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
         </nav>
-           <button class="dark-mode-toggle" id="mode-icon" aria-label="Toggle dark mode">
-</button>
-    </button>
+        <button class="dark-mode-toggle" id="mode-icon" aria-label="Toggle dark mode">🌙</button>
     </header>
     
     <section id="home">
@@ -485,7 +554,7 @@ body.dark-mode section {
         </div>
     </section>
 
-     <section id="contact">
+    <section id="contact">
         <h1>Get In Touch</h1>
         <p>Feel free to reach out for collaborations or opportunities:</p>
         
@@ -508,12 +577,13 @@ body.dark-mode section {
             </div>
         </div>
     </section>
+    
     <footer>
-        <p> <center>© 2025 Meghana Kondamudi. All rights reserved.</center></p>
+        <p>© 2025 Meghana Kondamudi. All rights reserved.</p>
     </footer>
     
     <script>
-        // Typewriter effect
+        // Typewriter effect - Your original implementation
         const typewriterText = ["Data Analyst", "AI & ICT Specialist", "Problem Solver", "Web Developer", "Data Storyteller"];
         let count = 0;
         let index = 0;
@@ -521,38 +591,59 @@ body.dark-mode section {
         let letter = "";
         
         (function type() {
-            document.addEventListener('DOMContentLoaded', () => {
-  const darkModeToggle = document.getElementById('mode-icon');
-  darkModeToggle.addEventListener('click', toggleDarkMode);
-  
-  // Set initial state
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    darkModeToggle.textContent = '🌞';
-  }
-});
+            if (count === typewriterText.length) {
+                count = 0;
+            }
+            currentText = typewriterText[count];
+            letter = currentText.slice(0, ++index);
+            
+            document.getElementById("typewriter").textContent = letter;
+            if (letter.length === currentText.length) {
+                setTimeout(() => {
+                    count++;
+                    index = 0;
+                    setTimeout(type, 500);
+                }, 2000);
+            } else {
+                setTimeout(type, 100);
+            }
+        })();
 
-// Optimize typewriter effect
-let typewriterTimeout;
-(function type() {
-  if (count === typewriterText.length) count = 0;
-  currentText = typewriterText[count];
-  letter = currentText.slice(0, ++index);
-  
-  document.getElementById("typewriter").textContent = letter;
-  
-  if (letter.length === currentText.length) {
-    typewriterTimeout = setTimeout(() => {
-      count++;
-      index = 0;
-      typewriterTimeout = setTimeout(type, 500);
-    }, 2000);
-  } else {
-    typewriterTimeout = setTimeout(type, 100);
-  }
-})();
+        // Dark mode toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.getElementById('mode-icon');
+            body.classList.toggle('dark-mode');
 
+            if (body.classList.contains('dark-mode')) {
+                icon.textContent = '🌞';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
 
+        // Initialize dark mode from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersDark = localStorage.getItem('theme') === 'dark';
+            const darkModeToggle = document.getElementById('mode-icon');
+            
+            if (prefersDark) {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.textContent = '🌞';
+            }
+            
+            darkModeToggle.addEventListener('click', toggleDarkMode);
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     </script>
 </body>
 </html>
