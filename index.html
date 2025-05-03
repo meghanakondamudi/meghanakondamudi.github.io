@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dark Mode Toggle</title>
+  <meta name="description" content="Portfolio of Meghana Kondamudi, Data Analyst and AI & ICT Specialist." />
+  <title>Meghana Kondamudi | Data Analyst</title>
 
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -11,83 +12,235 @@
   <style>
     :root {
       --bg-light: #ffffff;
-      --bg-dark: #121212;
-      --text-light: #000000;
+      --bg-dark: #111;
+      --text-light: #333;
       --text-dark: #f0f0f0;
     }
 
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
       background-color: var(--bg-light);
       color: var(--text-light);
+      line-height: 1.6;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
       transition: background-color 0.3s, color 0.3s;
     }
 
-    .dark-mode {
+    body.dark-mode {
       background-color: var(--bg-dark);
       color: var(--text-dark);
     }
 
+    /* Header and Nav */
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background-color: var(--bg-light);
-      border-bottom: 1px solid #ddd;
-      transition: background-color 0.3s, border-color 0.3s;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      background-color: inherit;
+      z-index: 100;
+      border-bottom: 1px solid #eee;
     }
 
-    body.dark-mode .header {
-      background-color: var(--bg-dark);
-      border-bottom: 1px solid #333;
+    .nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-button {
+      padding: 10px 20px;
+      background: none;
+      border: 1px solid var(--text-light);
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      color: inherit;
+    }
+
+    .nav-button:hover {
+      background-color: var(--text-light);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .nav-button {
+      border-color: var(--text-dark);
+    }
+
+    body.dark-mode .nav-button:hover {
+      background-color: var(--text-dark);
+      color: #111;
     }
 
     .dark-mode-toggle {
       background: none;
       border: none;
       cursor: pointer;
-      color: var(--text-light);
       transition: color 0.3s;
+      color: inherit;
     }
 
-    body.dark-mode .dark-mode-toggle {
-      color: var(--text-dark);
-    }
-
-    .content {
-      padding: 2rem;
-    }
-
-    /* Icon size */
     .dark-mode-toggle svg {
       width: 24px;
       height: 24px;
     }
+
+    section {
+      padding: 40px 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    body.dark-mode section {
+      border-bottom-color: #444;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--text-light);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    body.dark-mode .profile-image {
+      border-color: var(--text-dark);
+    }
+
+    .skill-tag {
+      padding: 8px 16px;
+      background: #f0f0f0;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    body.dark-mode .skill-tag {
+      background: #222;
+      color: var(--text-dark);
+    }
+
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    body.dark-mode .project-card {
+      background: #1e1e1e;
+      border-color: #444;
+      color: var(--text-dark);
+    }
+
+    .contact-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    body.dark-mode footer {
+      color: #aaa;
+    }
   </style>
 </head>
-<body>
 
+<body>
   <header class="header">
-    <h1>My Website</h1>
+    <nav class="nav">
+      <button class="nav-button" onclick="scrollToSection('home')">Home</button>
+      <button class="nav-button" onclick="scrollToSection('resume')">Resume</button>
+      <button class="nav-button" onclick="scrollToSection('projects')">Projects</button>
+      <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
+    </nav>
     <button class="dark-mode-toggle" aria-label="Toggle dark mode">
       <i data-lucide="moon"></i>
     </button>
   </header>
 
-  <main class="content">
-    <p>This is some content. Try switching themes!</p>
-  </main>
+  <section id="home">
+    <h1>Hello, I'm Meghana 👋</h1>
+    <p>Data Analyst | AI & ICT Specialist | UN ITU Consultant</p>
+    <div class="profile-image-container">
+      <img class="profile-image" src="your-profile.jpg" alt="Meghana Profile Photo">
+    </div>
+    <div class="skills-tags">
+      <span class="skill-tag">Power BI (Web)</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Informatica</span>
+      <span class="skill-tag">AI for Good</span>
+      <span class="skill-tag">Google Analytics Cert</span>
+      <span class="skill-tag">Tableau</span>
+    </div>
+  </section>
 
+  <section id="resume">
+    <h2>Experience</h2>
+    <div class="resume-item">
+      <p class="resume-company">International Telecommunication Union (ITU)</p>
+      <p class="resume-date">2024 – 2025</p>
+      <p class="resume-description">Supporting AI and ICT projects with data visualization and analysis.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>AI for Good Dashboard</h3>
+      <p>Built dashboards with Power BI web version to support global AI initiatives.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <a class="contact-link" href="mailto:meghana@example.com">meghana@example.com</a>
+      </div>
+      <div class="contact-item">
+        <a class="contact-link" href="https://linkedin.com/in/meghana" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Meghana Kondamudi. All rights reserved.
+  </footer>
+
+  <!-- Toggle & Scroll Script -->
   <script>
-    // Load Lucide icons
     lucide.createIcons();
 
     const toggleBtn = document.querySelector(".dark-mode-toggle");
     const icon = toggleBtn.querySelector("i");
 
-    // Check if dark mode was saved before
     if (localStorage.getItem("darkMode") === "true") {
       document.body.classList.add("dark-mode");
       icon.setAttribute("data-lucide", "sun");
@@ -98,11 +251,13 @@
       document.body.classList.toggle("dark-mode");
       const isDark = document.body.classList.contains("dark-mode");
       localStorage.setItem("darkMode", isDark);
-
       icon.setAttribute("data-lucide", isDark ? "sun" : "moon");
-      lucide.createIcons(); // Refresh icon
+      lucide.createIcons();
     });
-  </script>
 
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
