@@ -21,6 +21,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     /* Header and Nav */
@@ -51,6 +52,7 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      color: #333;
     }
 
     .nav-button:hover {
@@ -89,9 +91,8 @@
       }
     }
 
-    /* Dark Mode Toggle */
     .dark-mode-toggle {
-      font-size: 20px;
+      font-size: 22px;
       background: none;
       border: none;
       cursor: pointer;
@@ -273,7 +274,7 @@
       font-size: 0.9rem;
     }
 
-    /* Dark Mode */
+    /* DARK MODE STYLES */
     body.dark-mode {
       background-color: #111;
       color: #f0f0f0;
@@ -327,184 +328,38 @@
       <button class="nav-button" onclick="scrollToSection('projects')">Projects</button>
       <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
     </nav>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()" id="mode-icon" title="Toggle dark mode">🌙</button>
   </header>
-    
-    <section id="home">
-        <div class="intro-container">
-            <h1>Hello, I'm <span style="font-weight: 700;">Meghana Kondamudi</span></h1>
-            <div class="typewriter-container" id="typewriter"></div>
-            <p>
-                A data-driven problem solver with a background in Computer Science and experience across both public and private sectors. 
-                Currently serving as a Data Support Consultant at the International Telecommunication Union (ITU), working at the 
-                intersection of AI, ICT, data analysis, and web development.
-            </p>
-            
-            <div class="skills-tags">
-                <div class="skill-tag">SQL</div>
-                <div class="skill-tag">Analytical Skills</div>
-                <div class="skill-tag">Microsoft Power BI</div>
-                <div class="skill-tag">Informatica PowerCenter</div>
-                <div class="skill-tag">Data Visualization</div>
-                <div class="skill-tag">AI & ICT</div>
-                <div class="skill-tag">Web Development</div>
-            </div>
-        </div>
-        
-        <div class="profile-image-container">
-            <img src="/images/1745839602985.jpg" alt="Meghana Kondamudi" class="profile-image">
-        </div>
-    </section>
-    
-    <section id="resume">
-        <h1>Professional Experience</h1>
-        
-        <div class="resume-item">
-            <div class="resume-company">International Telecommunication Union (ITU)</div>
-            <div class="resume-date">Jun 2024 - Present | Geneva, Switzerland</div>
-            <div class="resume-description">
-                Specialized agency of the United Nations responsible for information and communication technologies (ICTs).
-            </div>
-            <h3>Consultant, Telecommunication Standardization Bureau</h3>
-            <ul class="resume-highlights">
-                <li>Designed and maintained web pages for the AI for Good website, ensuring high-quality content delivery</li>
-                <li>Managed speaker/exhibitor content and curated global tech events for the website</li>
-                <li>Optimized website SEO and accessibility to enhance visibility and engagement</li>
-                <li>Conducted research on AI startups, industries, and countries to support strategic partner engagement</li>
-                <li>Created weekly traffic reports for key webpages to monitor and analyze performance</li>
-                <li>Extracted and analyzed membership data from CRM to generate sector-specific reports</li>
-                <li>Co-organized the 9-day Digital Wave Stage at WTSA-24 Expo in India</li>
-            </ul>
-        </div>
-        
-        <div class="resume-item">
-            <div class="resume-company">Infosys</div>
-            <div class="resume-date">Aug 2018 - Nov 2020 | India</div>
-            <h3>Systems Engineer</h3>
-            <ul class="resume-highlights">
-                <li>Developed and optimized 50+ data mappings and workflows using Informatica PowerCenter</li>
-                <li>Engineered data management capabilities for archival, purging, and legal holds</li>
-                <li>Collaborated with business analysts to translate 100+ business requirements into solutions</li>
-                <li>Implemented technical support frameworks for 5+ major client projects</li>
-            </ul>
-        </div>
-        
-        <h2 style="margin-top: 50px;">Education</h2>
-        <div class="resume-item">
-            <h3>Bachelor of Technology in Computer Science</h3>
-            <div class="resume-date">Sreenidhi Institute of Science and Technology | Grade: A</div>
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h1>Key Projects</h1>
-        
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Digital Wave Stage (ITU WTSA-24 Expo)</h3>
-                <p>Co-organized and analyzed this 9-day event on digital connectivity and AI standards:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Coordinated 24 sessions with 51 speakers</li>
-                    <li>43% female speaker representation</li>
-                    <li>Global participation from Asia, Europe, and North America</li>
-                </ul>
-            </div>
-            
-            <div class="project-card">
-                <h3>Health Insurance System</h3>
-                <p>Java/Spring website for insurance plan selection and management:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Plan customization features</li>
-                    <li>Purchase record maintenance</li>
-                    <li>Maturity amount forecasting</li>
-                </ul>
-            </div>
-            
-            <div class="project-card">
-                <h3>Secure Email Transmission System</h3>
-                <p>Enhanced security solution for email communication:</p>
-                <ul style="margin-left: 20px; margin-top: 10px;">
-                    <li>Two-layer authentication</li>
-                    <li>Content encryption</li>
-                    <li>Confidentiality protection</li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
-     <section id="contact">
-        <h1>Get In Touch</h1>
-        <p>Feel free to reach out for collaborations or opportunities:</p>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <a href="mailto:meghanakondamudi24@gmail.com" class="contact-link">meghanakondamudi24@gmail.com</a>
-            </div>
-            
-            <div class="contact-item">
-                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                    <rect x="2" y="9" width="4" height="12"></rect>
-                    <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-                <a href="https://linkedin.com/in/meghana-kondamudi" target="_blank" class="contact-link">linkedin.com/in/meghana-kondamudi</a>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <p> <center>© 2025 Meghana Kondamudi. All rights reserved.</center></p>
-    </footer>
-    
-    <script>
-        // Typewriter effect
-        const typewriterText = ["Data Analyst", "AI & ICT Specialist", "Problem Solver", "Web Developer", "Data Storyteller"];
-        let count = 0;
-        let index = 0;
-        let currentText = "";
-        let letter = "";
-        
-        (function type() {
-            if (count === typewriterText.length) {
-                count = 0;
-            }
-            currentText = typewriterText[count];
-            letter = currentText.slice(0, ++index);
-            
-            document.getElementById("typewriter").textContent = letter;
-            if (letter.length === currentText.length) {
-                setTimeout(() => {
-                    count++;
-                    index = 0;
-                    setTimeout(type, 500);
-                }, 2000);
-            } else {
-                setTimeout(type, 100);
-            }
-        })();
-        
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-         if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-        document.querySelector('.dark-mode-toggle').textContent = '☀️';
-    }
-    //toggke darkmode
+  <section id="home">
+    <div class="intro-container">
+      <h1>Hello, I'm <span style="font-weight: 700;">Meghana Kondamudi</span></h1>
+      <div class="typewriter-container" id="typewriter"></div>
+      <p>A data-driven problem solver with a background in Computer Science and experience across both public and private sectors.</p>
+    </div>
+  </section>
+
+  <!-- Add your other sections (resume, projects, contact, etc.) here -->
+
+  <script>
     function toggleDarkMode() {
-        const body = document.body;
-        const toggleButton = document.querySelector('.dark-mode-toggle');
-        body.classList.toggle('dark-mode');
-        
-        const isDark = body.classList.contains('dark-mode');
-        toggleButton.textContent = isDark ? '☀️' : '🌙';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      const body = document.body;
+      const icon = document.getElementById("mode-icon");
+      body.classList.toggle("dark-mode");
+
+      if (body.classList.contains("dark-mode")) {
+        icon.textContent = "☀️"; // Light mode icon (sun)
+      } else {
+        icon.textContent = "🌙"; // Dark mode icon (moon)
+      }
     }
-    </script>
+
+    function scrollToSection(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
 </body>
 </html>
